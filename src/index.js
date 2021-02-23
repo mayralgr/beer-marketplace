@@ -6,6 +6,7 @@ const app = express();
 
 const indexRouter = require('./routes/index.router')
 const beerRouter = require('./routes/beer.router')
+const personRouter = require('./routes/person.router')
 
 //settings
 app.set("port", process.env.PORT || 3000);
@@ -18,7 +19,8 @@ app.use(bodyParser.json());
 
 //routes
 app.use(indexRouter)
-app.use("/api/beer",beerRouter)
+app.use("/api/v1/beer",beerRouter)
+app.use("/api/v1/person",personRouter)
 
 //Starting the server
 app.listen(app.get("port"), () => {
