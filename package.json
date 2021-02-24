@@ -2,28 +2,32 @@
   "name": "beer-marketplace",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node .",
+    "dev": "nodemon --watch .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OmarMorales71/beer-marketplace.git"
+    "url": "git+https://github.com/mayralgr/beer-marketplace.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OmarMorales71/beer-marketplace/issues"
+    "url": "https://github.com/mayralgr/beer-marketplace/issues"
   },
-  "homepage": "https://github.com/OmarMorales71/beer-marketplace#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "morgan": "^1.10.0"
-  },
+  "homepage": "https://github.com/mayralgr/beer-marketplace#readme",
   "devDependencies": {
     "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.11.15",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
   }
 }
