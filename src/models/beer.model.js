@@ -9,7 +9,7 @@ const BeerSchema = new Schema ({
         type: String,
         required: true
     },
-    nationality : {
+    country : {
         type: String,
         required: true
     } 
