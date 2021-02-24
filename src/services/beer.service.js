@@ -6,4 +6,9 @@ class BeerService {
         const newBeer = new Beer(beer);
         return newBeer.save();
     }
+
+    async findAll(){
+        const beers = await Beer.find();
+        return beers;
+    }
 }
