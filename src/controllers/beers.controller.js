@@ -1,16 +1,8 @@
+const beerService = require("../services/beer.service");
 
-const getBeer = async ( req, res ) => {
-    return res.status(200).send([
-        {
-            "name":"Corona", 
-            "type": "lager"
-        },
-        {
-            "name":"Victoria", 
-            "type": "lager"
-        }
-
-    ]).json();
+const getBeers = async ( req, res ) => {
+    const beers = await beerService.getBeers();
+    return res.status(200).send(beers).json();
 }
 
 const saveBeer = async ( req, res ) => {
@@ -20,4 +12,4 @@ const saveBeer = async ( req, res ) => {
     }).json();
 }
 
-module.exports = { getBeer, saveBeer };
+module.exports = { getBeers, saveBeer };
