@@ -1,23 +1,31 @@
-const express = require('express');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
 
-// router
-const testRouter = require('./routes/test.router');
-const beerRouter = require('./routes/beers.router');
+const dotenv = require("dotenv");
+const App = require("./app");
+const Connection = require("./db/db-connection");
 
-const app = express();
+dotenv.config();
 const port = process.env.port || 3000;
+const connectionString = process.env.CONNECTION_STRING;
 
-// Middlewares
-app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json())
+//array of routes
+const routes = [require('./routes/test.router'),
+                require('./routes/beers.router'),
+]
 
-// routes
-app.use('/api',testRouter);
-app.use('/api/beer',beerRouter);
+const app = new App(port, routes);
 
-app.listen(port, () => {
-    console.log(`App running at http://localhost:${port}`)
-})
+const database = new Connection(connectionString);
+
+
+database
+  .connect()
+  .then(() => {
+    console.log("Database connected successfully");
+    return app.listen();
+  })
+  .then(() => {
+    console.log(`App running in port ${port}`);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
