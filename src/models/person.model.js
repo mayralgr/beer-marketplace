@@ -24,6 +24,4 @@ const PersonSchema = new Schema({
     }
 });
 
-
 module.exports = model('Person',PersonSchema);
-

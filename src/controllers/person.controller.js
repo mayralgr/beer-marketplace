@@ -56,4 +56,6 @@ const getPerson = (req, res) => {
     console.log(req.params.id)
     res.status(204);
   };
+
   module.exports = { getPersons, getPerson, savePerson, updatePerson, deletePerson };
+  

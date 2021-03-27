@@ -24,5 +24,4 @@ const BeerOrderSchema = new Schema({
     }
 });
 
-
 module.exports = model('BeerOrder',BeerOrderSchema);

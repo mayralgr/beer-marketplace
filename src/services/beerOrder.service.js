@@ -1,4 +1,3 @@
-//Delete later
 const BeerOrder = require("../models/beerOrder.model");
 
 class BeerOrderService {

@@ -20,4 +20,5 @@ const saveOrder = async (req, res) => {
 const cancelOrder = (req, res) => {
   return res.sendStatus(204);
 };
+
 module.exports = { getBeerOrders, getBeerOrder, saveOrder, cancelOrder };
