@@ -2,14 +2,25 @@
 const BeerOrder = require("../models/beerOrder.model");
 
 class BeerOrderService {
-  async create(beer) {
-    //const newBeer = new Beer(beer);
-    //return newBeer.save();
+  async create(order) {
+    const newBeerOrder = new BeerOrder(order);
+    console.log(newBeerOrder);
+    await newBeerOrder.save();
+    return newBeerOrder;
+  }
+
+  async findById(orderId) {
+    const beerOrder = await BeerOrder.findOne({ _id: orderId });
+    return beerOrder;
   }
 
   async findAll() {
-    //const beers = await Beer.find();
-    //return beers;
+    const allBeerOrders = await BeerOrder.find();
+    return allBeerOrders;
+  }
+
+  async deleteOrder(orderId) {
+    await BeerOrder.deleteOne({ _id: orderId });
   }
 }
 

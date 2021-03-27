@@ -1,4 +1,3 @@
-
 const dotenv = require("dotenv");
 const App = require("./app");
 const Connection = require("./db/db-connection");
@@ -8,15 +7,14 @@ const port = process.env.port || 3000;
 const connectionString = process.env.CONNECTION_STRING;
 
 //array of routes
-const routes = [require('./routes/test.router'),
-                require('./routes/beers.router'),
-                require('./routes/person.router')
-]
+const routes = [
+  require("./routes/person.router"),
+  require("./routes/beerOrder.router"),
+];
 
 const app = new App(port, routes);
 
 const database = new Connection(connectionString);
-
 
 database
   .connect()
