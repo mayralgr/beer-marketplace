@@ -1,17 +1,17 @@
 const { model, Schema } = require('mongoose');
 
-const PersonSchema = new Schema({
-    name : {
-        type: String,
-        required: true
-    },
-    programmingLanguage : {
-        type: String,
+const BeerOrderSchema = new Schema({
+    person : {
+        type: Schema.Types.ObjectId,
+        ref: "Person"
     },
     beer : {
-        type: Schema.Types.ObjectId,
-        ref: 'Beer',
+        type: String,
         required: true
+    },
+    quantity: {
+        type: Number,
+        default: 1
     }
 }, {
     timestamps: true,
@@ -24,4 +24,4 @@ const PersonSchema = new Schema({
     }
 });
 
-module.exports = model('Person',PersonSchema);
+module.exports = model('BeerOrder',BeerOrderSchema);

@@ -1,18 +1,12 @@
-const { model, Schema } = require('mongoose');
+class Beer {
 
-const BeerSchema = new Schema ({
-    name : {
-        type: String,
-        required: true
-    },
-    type : {
-        type: String,
-        required: true
-    },
-    country : {
-        type: String,
-        required: true
-    } 
-});
-
-module.exports = model('Beer', BeerSchema)
+    constructor(id, name, type, quantity, minQuantity, country){
+        this.id = id;
+        this.name=name;
+        this.type=type;
+        this.quantity=quantity;
+        this.minQuantity=minQuantity;
+        this.country=country;
+    }
+    
+}
