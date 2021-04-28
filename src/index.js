@@ -10,6 +10,7 @@ const connectionString = process.env.CONNECTION_STRING;
 const routes = [
   require("./routes/person.router"),
   require("./routes/beerOrder.router"),
+  require("./routes/beer.router")
 ];
 
 const app = new App(port, routes);
