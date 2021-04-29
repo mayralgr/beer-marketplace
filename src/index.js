@@ -3,14 +3,14 @@ const App = require("./app");
 const Connection = require("./db/db-connection");
 
 dotenv.config();
-const port = process.env.port || 3000;
+const port = process.env.port || 5000;
 const connectionString = process.env.CONNECTION_STRING;
 
 //array of routes
 const routes = [
   require("./routes/person.router"),
   require("./routes/beerOrder.router"),
-  require("./routes/beer.router")
+  require("./routes/beer.router"),
 ];
 
 const app = new App(port, routes);
