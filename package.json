@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/mayralgr/beer-marketplace#readme",
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "axios": "^0.21.1",
